@@ -31,9 +31,10 @@ public class Timer : MonoBehaviour
     {
         currentTime += 1;
 
+        float minutes = Mathf.FloorToInt(currentTime / 60);
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
-        TimerText.text = string.Format("{01:00}", seconds);
+        TimerText.text = string.Format("{00:00} : {01:00}", minutes, seconds);
     }
 
     void timerEnded()
