@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ValveChecker : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     
     [Header("Pipe Configuration")]
