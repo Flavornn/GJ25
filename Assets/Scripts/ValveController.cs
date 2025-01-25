@@ -17,7 +17,7 @@ public class ValveController : MonoBehaviour
         if ( !isActivated)
         {
             isActivated = true;
-            gameManager.CurrentTurns++;
+            //gameManager.CurrentTurns++;
         }
     }
 
