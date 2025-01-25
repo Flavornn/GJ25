@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
 
+    public GameObject buttonsToHide;
+    public GameObject textToHide;
+    public GameObject creditsObjects;
+    private bool isCreditsActive = false;
 
     public void Play()
     {
@@ -29,6 +33,18 @@ public class MainMenuManager : MonoBehaviour
 
     public void ShowCredits()
     {
-
+        if (!isCreditsActive) {
+            buttonsToHide.SetActive(false);
+            textToHide.SetActive(false);
+            creditsObjects.SetActive(true);
+            isCreditsActive = true;
+        }
+        else
+        {
+            buttonsToHide.SetActive(true);
+            textToHide.SetActive(true);
+            creditsObjects.SetActive(false);
+            isCreditsActive = false;
+        }
     }
 }
