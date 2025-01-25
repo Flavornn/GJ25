@@ -1,44 +1,59 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ValveChecker : MonoBehaviour
 {
-    [System.Serializable]
-    public class Valve
-    {
-        public GameObject valveObject;
-        public bool isCorrect;
-    }
-
-    [Header("Valve Configuration")]
-    [Tooltip("List of valve objects and their correctness status")]
-    public List<Valve> valves = new List<Valve>();
+    
+    [Header("Pipe Configuration")]
+    [Tooltip("List of pipe objects and their correctness status")]
+    public List<Pipe> pipes = new List<Pipe>();
 
     void Start()
     {
-        if (valves.Count == 0)
+        if (pipes.Count == 0)
         {
-            Debug.LogWarning("No valves assigned. Please assign valves in the Inspector.");
+            Debug.LogWarning("No pipes assigned. Please assign valves in the Inspector.");
         }
     }
 
-    public void CheckValves()
+    public void CheckPipes()
     {
-        int correctCount = 0;
+        /*int correctCount = 0;
 
-        foreach (var valve in valves)
+        foreach (var pipe in pipes)
         {
-            if (valve.isCorrect)
+            if (pipe.isCorrect)
             {
                 correctCount++;
-                Debug.Log($"{valve.valveObject.name} is correct.");
+                Debug.Log($"{pipe.pipeObject.name} is correct.");
             }
             else
             {
-                Debug.Log($"{valve.valveObject.name} is incorrect.");
+                Debug.Log($"{pipe.pipeObject.name} is incorrect.");
             }
         }
 
-        Debug.Log($"{correctCount}/{valves.Count} valves are correct.");
+        Debug.Log($"{correctCount}/{pipes.Count} valves are correct.");*/
+        bool isCorrect = false;
+        foreach (var pipe in pipes)
+        {
+            if (pipe.currentState == pipe.correctState)
+            {
+                isCorrect = true;
+            }
+            else {
+                
+                isCorrect = false; 
+                break;
+            }
+        }
+
+        Debug.Log(isCorrect);
+    }
+
+    private void Update()
+    {
+        CheckPipes();
     }
 }
