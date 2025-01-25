@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ValveChecker : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    [SerializeField] private int MaxTurns;
+    [SerializeField] public int CurrentTurns;   
     [System.Serializable]
     public class Valve
     {
@@ -10,7 +12,6 @@ public class ValveChecker : MonoBehaviour
         public bool isCorrect;
     }
 
-    [Header("Valve Configuration")]
     [Tooltip("List of valve objects and their correctness status")]
     public List<Valve> valves = new List<Valve>();
 
@@ -22,15 +23,18 @@ public class ValveChecker : MonoBehaviour
         }
     }
 
-    public void CheckValves()
+    public void Update()
     {
-        int correctCount = 0;
+        if(CurrentTurns > MaxTurns)
+        {
+            Debug.Log("You lost");
+        }
 
         foreach (var valve in valves)
         {
             if (valve.isCorrect)
             {
-                correctCount++;
+
                 Debug.Log($"{valve.valveObject.name} is correct.");
             }
             else
@@ -38,7 +42,5 @@ public class ValveChecker : MonoBehaviour
                 Debug.Log($"{valve.valveObject.name} is incorrect.");
             }
         }
-
-        Debug.Log($"{correctCount}/{valves.Count} valves are correct.");
     }
 }
