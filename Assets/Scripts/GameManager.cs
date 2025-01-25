@@ -35,21 +35,21 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log($"{correctCount}/{pipes.Count} valves are correct.");*/
-        //bool isCorrect = false;
-        //foreach (var pipe in pipes)
-        //{
-        //    if (pipe.currentState == pipe.correctState)
-        //    {
-        //        isCorrect = true;
-        //    }
-        //    else {
-        //        
-        //        isCorrect = false; 
-        //        break;
-        //    }
-        //}
+        bool isCorrect = false;
+        foreach (var pipe in pipes)
+        {
+            if (pipe.currentState == pipe.correctState)
+            {
+                isCorrect = true;
+            }
+            else {
+                
+                isCorrect = false; 
+                break;
+            }
+        }
 
-       // Debug.Log(isCorrect);
+         Debug.Log(isCorrect);
     }
 
     private void Update()

@@ -79,3 +79,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   correctState: 0
+  pipeType: 2
