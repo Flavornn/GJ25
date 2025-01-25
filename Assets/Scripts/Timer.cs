@@ -29,7 +29,6 @@ public class Timer : MonoBehaviour
 
     private void TimerUpdate(float currentTime)
     {
-        currentTime += 1;
 
         float minutes = Mathf.FloorToInt(currentTime / 60);
         float seconds = Mathf.FloorToInt(currentTime % 60);

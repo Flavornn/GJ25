@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326b3dcb25edc1341b43dc9070518290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeLeft: 60
+  TimeLeft: 20
   TimerText: {fileID: 1338020999}
 --- !u!1001 &50983857
 PrefabInstance:
