@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [Header("Pipe Configuration")]
     [Tooltip("List of pipe objects and their correctness status")]
     public List<Pipe> pipes = new List<Pipe>();
+    public WaterEnabler waterEnabler;
+    private bool waterEnabled = false;
 
     void Start()
     {
@@ -19,37 +21,23 @@ public class GameManager : MonoBehaviour
 
     public void CheckPipes()
     {
-        /*int correctCount = 0;
+        bool allCorrect = true;
 
         foreach (var pipe in pipes)
         {
-            if (pipe.isCorrect)
+            if (pipe.currentState != pipe.correctState)
             {
-                correctCount++;
-                Debug.Log($"{pipe.pipeObject.name} is correct.");
-            }
-            else
-            {
-                Debug.Log($"{pipe.pipeObject.name} is incorrect.");
-            }
-        }
-
-        Debug.Log($"{correctCount}/{pipes.Count} valves are correct.");*/
-        bool isCorrect = false;
-        foreach (var pipe in pipes)
-        {
-            if (pipe.currentState == pipe.correctState)
-            {
-                isCorrect = true;
-            }
-            else {
-                
-                isCorrect = false; 
+                allCorrect = false;
                 break;
             }
         }
 
-         Debug.Log(isCorrect);
+        if (allCorrect && !waterEnabled)
+        {
+            waterEnabled = true;
+            Debug.Log("True");
+            waterEnabler?.EnableWater();
+        }
     }
 
     private void Update()
