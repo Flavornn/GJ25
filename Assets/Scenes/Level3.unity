@@ -307,6 +307,9 @@ MonoBehaviour:
   - {fileID: 2059881846}
   - {fileID: 255255459}
   waterEnabler: {fileID: 393255057}
+  LevelComplete: {fileID: 0}
+  toggleDelay: 2
+  NextLevel: {fileID: 0}
 --- !u!4 &33294955
 Transform:
   m_ObjectHideFlags: 0
@@ -2487,6 +2490,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6820075099513797579, guid: da6b0f042f770df45ac04f5bb7e1b1a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 46be5b90af44d0e4aaf13043b3cdb9c9, type: 2}
+    - target: {fileID: 6820075099513797579, guid: da6b0f042f770df45ac04f5bb7e1b1a7, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 46be5b90af44d0e4aaf13043b3cdb9c9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
