@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -9,15 +10,20 @@ public class Timer : MonoBehaviour
 
     public Text TimerText;
     public RawImage ImageToShow;
+    public Button RestartButton;
 
     public void Start()
     {
         TimerOn = true;
 
-        // Hide the image at the start
         if (ImageToShow != null)
         {
             ImageToShow.gameObject.SetActive(false);
+        }
+
+        if (RestartButton != null)
+        {
+            RestartButton.gameObject.SetActive(false);
         }
     }
 
@@ -57,5 +63,28 @@ public class Timer : MonoBehaviour
         {
             ImageToShow.gameObject.SetActive(true);
         }
+
+        if (RestartButton != null)
+        {
+            StartCoroutine(ShowRestartButton());
+        }
+    }
+
+    IEnumerator ShowRestartButton()
+    {
+        yield return new WaitForSeconds(1f);
+
+        if (RestartButton != null)
+        {
+            RestartButton.gameObject.SetActive(true);
+        }
+    }
+}
+
+public class GameRestart : MonoBehaviour
+{
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
