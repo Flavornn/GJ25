@@ -29,12 +29,12 @@ public class Timer : MonoBehaviour
 
     public void Update()
     {
-        if (TimeLeft > 0)
+        if (TimerOn && TimeLeft > 0)
         {
             TimeLeft -= Time.deltaTime;
             TimerUpdate(TimeLeft);
         }
-        else
+        else if (TimeLeft <= 0 && TimerOn)
         {
             timerEnded();
         }
@@ -46,6 +46,11 @@ public class Timer : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
         TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void StopTimer()
+    {
+        TimerOn = false;
     }
 
     void timerEnded()

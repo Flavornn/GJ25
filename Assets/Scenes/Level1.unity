@@ -171,7 +171,7 @@ MonoBehaviour:
   - {fileID: 115767158}
   waterEnabler: {fileID: 379957751}
   WinRawImage: {fileID: 363600247}
-  toggleDelay: 8
+  toggleDelay: 9
   WinButton: {fileID: 1711987570}
   timer: {fileID: 33294956}
 --- !u!4 &33294955

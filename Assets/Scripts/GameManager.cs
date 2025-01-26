@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
 
             if (timer != null)
             {
-                timer.TimerOn = false;
+                timer.StopTimer();
             }
 
             StartCoroutine(ToggleImageWithDelay());

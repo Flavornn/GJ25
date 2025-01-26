@@ -247,7 +247,7 @@ MonoBehaviour:
   WinRawImage: {fileID: 465642714}
   toggleDelay: 16
   WinButton: {fileID: 441482244}
-  timer: {fileID: 0}
+  timer: {fileID: 33294956}
 --- !u!4 &33294955
 Transform:
   m_ObjectHideFlags: 0
