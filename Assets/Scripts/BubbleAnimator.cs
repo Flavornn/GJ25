@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PipeAnimator : MonoBehaviour
+public class BubbleAnimator : MonoBehaviour
 {
     private Animator animator;
 

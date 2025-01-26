@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public WaterEnabler waterEnabler;
     private bool waterEnabled = false;
     private PipeAnimator pipeAnimator;
+    private BubbleAnimator bubbleAnimator;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("No pipes assigned. Please assign valves in the Inspector.");
         }
         pipeAnimator = FindAnyObjectByType<PipeAnimator>();
+        bubbleAnimator = FindAnyObjectByType<BubbleAnimator>();
     }
 
     public void CheckPipes()
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("True");
             waterEnabler?.EnableWater();
             pipeAnimator?.PlayAnimation();
+            bubbleAnimator?.PlayAnimation();
         }
     }
 
