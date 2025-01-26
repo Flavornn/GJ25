@@ -306,6 +306,7 @@ MonoBehaviour:
   - {fileID: 1120966426}
   - {fileID: 2059881846}
   - {fileID: 255255459}
+  waterEnabler: {fileID: 393255057}
 --- !u!4 &33294955
 Transform:
   m_ObjectHideFlags: 0
