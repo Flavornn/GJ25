@@ -44,19 +44,18 @@ public class Timer : MonoBehaviour
 
     void timerEnded()
     {
-        Debug.Log("Time is up!");
-        TimeLeft = 0;
         TimerOn = false;
-
-        // Show the image and hide the timer text
-        if (ImageToShow != null)
-        {
-            ImageToShow.gameObject.SetActive(true);
-        }
+        TimeLeft = 0;
+        Debug.Log("Time is up!");
 
         if (TimerText != null)
         {
             TimerText.gameObject.SetActive(false);
+        }
+
+        if (ImageToShow != null)
+        {
+            ImageToShow.gameObject.SetActive(true);
         }
     }
 }
