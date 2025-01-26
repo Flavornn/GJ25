@@ -247,6 +247,7 @@ MonoBehaviour:
   WinRawImage: {fileID: 465642714}
   toggleDelay: 16
   WinButton: {fileID: 441482244}
+  timer: {fileID: 0}
 --- !u!4 &33294955
 Transform:
   m_ObjectHideFlags: 0
@@ -275,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 60
+  TimerOn: 0
   TimerText: {fileID: 1338020999}
   ImageToShow: {fileID: 866961763}
   RestartButton: {fileID: 808991788}
@@ -1679,7 +1681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &441482243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1885,7 +1887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &465642713
 RectTransform:
   m_ObjectHideFlags: 0
