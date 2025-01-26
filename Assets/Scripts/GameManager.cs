@@ -16,9 +16,11 @@ public class GameManager : MonoBehaviour
     private PipeAnimator pipeAnimator;
     private BubbleAnimator bubbleAnimator;
 
-    public RawImage LevelComplete;
+    public RawImage WinRawImage;
     public float toggleDelay = 2f;
-    public Button NextLevel;
+    public Button WinButton;
+
+    public Timer timer;
 
     void Start()
     {
@@ -30,14 +32,14 @@ public class GameManager : MonoBehaviour
         pipeAnimator = FindAnyObjectByType<PipeAnimator>();
         bubbleAnimator = FindAnyObjectByType<BubbleAnimator>();
 
-        if (LevelComplete != null)
+        if (WinRawImage != null)
         {
-            LevelComplete.enabled = false;
+            WinRawImage.enabled = false;
         }
 
-        if (NextLevel != null)
+        if (WinButton != null)
         {
-            NextLevel.gameObject.SetActive(false);
+            WinButton.gameObject.SetActive(false);
         }
     }
 
@@ -63,7 +65,13 @@ public class GameManager : MonoBehaviour
             pipeAnimator?.PlayAnimation();
             bubbleAnimator?.PlayAnimation();
 
+            if (timer != null)
+            {
+                timer.TimerOn = false;
+            }
+
             StartCoroutine(ToggleImageWithDelay());
+            StartCoroutine(ToggleButtonWithDelay());
         }
     }
 
@@ -71,9 +79,14 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(toggleDelay);
 
-        LevelComplete.enabled = true;
+        WinRawImage.enabled = true;
+    }
 
-        NextLevel.gameObject.SetActive(true);
+    private IEnumerator ToggleButtonWithDelay()
+    {
+        yield return new WaitForSeconds(toggleDelay+1);
+
+        WinButton.gameObject.SetActive(true);
     }
 
     private void Update()

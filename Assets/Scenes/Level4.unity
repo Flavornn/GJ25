@@ -244,9 +244,9 @@ MonoBehaviour:
   - {fileID: 115767158}
   - {fileID: 1126174372}
   waterEnabler: {fileID: 708467424}
-  LevelComplete: {fileID: 465642714}
-  toggleDelay: 14
-  NextLevel: {fileID: 441482244}
+  WinRawImage: {fileID: 465642714}
+  toggleDelay: 16
+  WinButton: {fileID: 441482244}
 --- !u!4 &33294955
 Transform:
   m_ObjectHideFlags: 0

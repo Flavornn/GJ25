@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public float TimeLeft = 60.0f;
-    private bool TimerOn = false;
+    public bool TimerOn = false;
 
     public Text TimerText;
     public RawImage ImageToShow;
